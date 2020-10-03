@@ -1,0 +1,14 @@
+service: phonix-audio
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: 'eu-west-2'
+
+functions:
+  get-index:
+    handler: functions/getIndex.handler
+    events:
+      - http:
+          path: /
+          method: get
